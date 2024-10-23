@@ -144,7 +144,12 @@ router.post("/", auth.required, function(req, res, next) {
         return res.sendStatus(401);
       }
 
-      var item = new Item(req.body.item);
+      //var item = new Item(req.body.item);
+
+      var item = new Item({
+        title: "Hey", description: "What's up",
+        image: "Archery", tagList: ["tag1", "tag2"]
+      });
 
       item.seller = user;
 
